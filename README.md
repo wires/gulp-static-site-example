@@ -1,4 +1,4 @@
-Example setup for `gulp-static-site`
+Example setup for [`gulp-static-site`](https://github.com/wires/gulp-static-site)
 
 ## Gollum
 
