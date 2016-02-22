@@ -1,17 +1,17 @@
 doctype html
 html
-    head
-        link(rel='stylesheet', href='http://yui.yahooapis.com/pure/0.4.2/pure-min.css')
-        link(rel='stylesheet', href='css/style.css')
-    body
-        div.pure-g-r#main
-            div.pure-u-1-5
-                ul
-                    each file, fn in siteContents
-                        li
-                            if file.isCurrent
-                                = file.shortName
-                            else
-                                a(href=file.link)= file.shortName
-            div.pure-u-4-5
-                != fileContents
+  head
+    link(rel='stylesheet', href='http://yui.yahooapis.com/pure/0.4.2/pure-min.css')
+    link(rel='stylesheet', href='css/style.css')
+    meta(http-equiv='content-type', content='text/html; charset=UTF-8')
+  body
+    div.pure-g-r#main
+      div.pure-u-1-5
+        p Menu
+        ul
+          each node in page.tree.nodes
+            if node.leaf
+              li
+                a(href=node.leaf.href)= node.leaf.shortName
+      div.pure-u-4-5
+        != page.contents
